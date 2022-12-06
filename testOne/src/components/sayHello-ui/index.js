@@ -1,13 +1,15 @@
 import HelloName from "./name/index.vue"
+import HelloButton from "./button/index.vue"
 
-export { HelloName } 
+export { HelloName ,HelloButton  } 
 
-const component = [ HelloName ]
+const component = [ HelloName,HelloButton ]
 
 const SayHelloUI = {
   install(App){
     component.forEach((item)=>{
-      App.component(item.name,HelloName)
+      console.log(item)
+      App.component(item.name,item)
     })
   }
 }
